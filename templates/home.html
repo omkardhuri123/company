@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<h1>Company Homepage</h1>
+<p>The current date and time is: {% now "DATETIME_FORMAT" %}</p>
+<p>Today's inventory count is: {{ inventory_list|length }}</p>
+<ul>
+    {% for item in inventory_list %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+<p>{{ greeting }}</p>
+<p>This is a test for the home page</p>
+{% endblock %}
